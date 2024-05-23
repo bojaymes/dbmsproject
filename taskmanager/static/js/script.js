@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
 
+    // Modal initialization
+    let tmodals = document.querySelectorAll('.tmodal');
+    M.Modal.init(tmodals);
+
     // datepicker initialization
     let datepicker = document.querySelectorAll(".datepicker");
     M.Datepicker.init(datepicker, {
