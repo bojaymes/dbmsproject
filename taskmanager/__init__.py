@@ -15,6 +15,4 @@ else:
         uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
-db = SQLAlchemy(app)
-
 from taskmanager import routes  # noqa
