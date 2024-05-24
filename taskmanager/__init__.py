@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 if os.environ.get("DEVELOPMENT") == "True":
@@ -15,4 +14,7 @@ else:
         uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
+db = SQLAlchemy(app)
+
+# Import routes only after the app and db are initialized
 from taskmanager import routes  # noqa
