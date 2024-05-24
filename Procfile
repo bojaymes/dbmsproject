@@ -1,1 +1,1 @@
-web: gunicorn taskmanager:app
+web: python run.py
